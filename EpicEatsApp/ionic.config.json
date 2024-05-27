@@ -1,0 +1,7 @@
+{
+  "name": "EpicEatsApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

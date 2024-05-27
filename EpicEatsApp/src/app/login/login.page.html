@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Login Page</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="login">
+        <ion-label>LOGIN</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="register">
+        <ion-label>REGISTER</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form (ngSubmit)="login()" [formGroup]="credentials" *ngIf="selectedSegment === 'login'">
+    <ion-item fill="outline" class="ion-margin-bottom">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+      <ion-note *ngIf="email?.touched && email?.hasError('required')">Email is required</ion-note>
+      <ion-note *ngIf="email?.touched && email?.hasError('email')">Email is invalid</ion-note>
+    </ion-item>
+    <ion-item fill="outline" class="ion-margin-bottom">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+      <ion-note *ngIf="password?.touched && password?.hasError('required')">Password is required</ion-note>
+      <ion-note *ngIf="password?.touched && password?.hasError('minlength')">
+        Password needs to be at least 6 characters
+      </ion-note>
+    </ion-item>
+    <ion-button type="submit" expand="block" [disabled]="!credentials.valid" fill="outline">Log in</ion-button>
+  </form>
+
+
+  <form (ngSubmit)="register()" [formGroup]="credentials" *ngIf="selectedSegment==='register'">
+    <ion-item fill="outline" class="ion-margin-bottom">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+      <ion-note *ngIf="email?.touched && email?.hasError('required')">Email is required</ion-note>
+      <ion-note *ngIf="email?.touched && email?.hasError('email')">Email is invalid</ion-note>
+    </ion-item>
+    <ion-item fill="outline" class="ion-margin-bottom">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+      <ion-note *ngIf="password?.touched && password?.hasError('required')">Password is required</ion-note>
+      <ion-note *ngIf="password?.touched && password?.hasError('minlength')">
+        Password needs to be at least 6 characters
+      </ion-note>
+    </ion-item>
+  </form>
+  <form [formGroup]="formData" (ngSubmit)="register()" *ngIf="selectedSegment==='register'" >
+    <ion-item fill="outline" class="ion-margin-bottom">
+      <ion-label position="floating">First Name</ion-label>
+      <ion-input formControlName="fName"></ion-input>
+    </ion-item>
+
+    <ion-item fill="outline" class="ion-margin-bottom">
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input formControlName="lName"></ion-input>
+    </ion-item>
+
+    <ion-item fill="outline" class="ion-margin-bottom">
+      <ion-label>Are you a Restaurant owner?</ion-label>
+      <ion-checkbox slot="end" (ionChange)="isChecked($event)"></ion-checkbox>
+    </ion-item>
+
+    <ion-item fill="outline" class="ion-margin-bottom" *ngIf="isARestaurantOwner===true">
+      <ion-label position="floating">Restaurant Name</ion-label>
+      <ion-input formControlName="restaurantName"></ion-input>
+    </ion-item>
+
+    <ion-item fill="outline" class="ion-margin-bottom" *ngIf="isARestaurantOwner===true">
+      <ion-label position="floating">Location</ion-label>
+      <ion-input formControlName="location"></ion-input>
+    </ion-item>
+
+
+    <ion-button type="button" expand="block" color="secondary" fill="outline" (click)="register()">Create account
+    </ion-button>
+  </form>
+
+</ion-content>
