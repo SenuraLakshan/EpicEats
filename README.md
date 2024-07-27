@@ -112,8 +112,8 @@ Using Spring Cloud Gateway for API routing and Netflix Eureka for service discov
 
 #### Item Details Service
 - **Tech Stack:** Spring Boot,
-- **Functionality:**The User Content Service manages and stores user-generated content, including reviews and photos, associated with users, restaurants, and menus.
-- 
+- **Functionality:**Manages detailed information about individual menu items.
+  
 #### User Content Service
 - **Tech Stack:** Spring Boot,
 - **Functionality:**The User Content Service manages and stores user-generated content, including reviews and photos, associated with users, restaurants, and menus.
@@ -142,14 +142,21 @@ Using Spring Cloud Gateway for API routing and Netflix Eureka for service discov
 
 **Inter Connection Service:** connect with menu management service to maintain menus
 
-
 #### Restaurant Search Service
-
+- **Tech Stack:** Spring Boot,
+- **Functionality:**Enables searching and filtering of restaurants within the application.
+  
 #### Restaurant Management Service
-
+- **Tech Stack:** Spring Boot,
+- **Functionality:**Manages the information and operations related to restaurants.
+  
 #### Discovery Server
-
+- **Tech Stack:** Netflix Eureka for service discovery,
+- **Functionality:**Provides service discovery capabilities in a microservices architecture.
+  
 #### API Gateway
+- **Tech Stack:** Spring Cloud Gateway,
+- **Functionality:**Acts as an entry point for all client requests, routing them to the appropriate microservices.
 
 ### Interservice Communications
 Interservice communications are done using Rest Templates. Example:
