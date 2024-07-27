@@ -111,7 +111,9 @@ Using Spring Cloud Gateway for API routing and Netflix Eureka for service discov
 - **Inter Service Interactions:** Interacts with menu management service.
 
 #### Item Details Service
-
+- **Tech Stack:** Spring Boot,
+- **Functionality:**The User Content Service manages and stores user-generated content, including reviews and photos, associated with users, restaurants, and menus.
+- 
 #### User Content Service
 - **Tech Stack:** Spring Boot,
 - **Functionality:**The User Content Service manages and stores user-generated content, including reviews and photos, associated with users, restaurants, and menus.
