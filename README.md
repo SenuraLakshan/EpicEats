@@ -19,7 +19,7 @@ The implementation of utility and authentication services maintains security and
 
 ### Architecture Diagram
 ![Architecture Diagram](architecture_diagram.jpg)
-### Architecture Diagram in More Details
+### Architecture Diagram in More Detail
 ![Architecture in Deatil](architecture_details.png)
 
 
