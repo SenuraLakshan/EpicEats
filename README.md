@@ -18,7 +18,9 @@ The implementation of utility and authentication services maintains security and
 ## Architecture
 
 ### Architecture Diagram
-![Architecture Diagram](path/to/architecture_diagram.png)
+![Architecture Diagram](architecture_diagram.png)
+![Architecture in Deatil](architecture_details.png)
+
 
 ### Design Decisions
 This architecture follows the microservices pattern, offering scalability, maintainability, and ease of deployment. Below are the design decisions for partitioning the application into different services and their contributions:
@@ -110,6 +112,33 @@ Using Spring Cloud Gateway for API routing and Netflix Eureka for service discov
 #### Item Details Service
 
 #### User Content Service
+- **Tech Stack:** Spring Boot,
+- **Functionality:**The User Content Service manages and stores user-generated content, including reviews and photos, associated with users, restaurants, and menus.
+- **REST API Endpoints:**
+
+    - POST/api/users		#Creating users
+    - GET/api/users		#Retrieving users 
+    - PUT/api/users/{user_id}	#Updating users by user id
+    - DELETE/api/users/{user_id}	#Deleting users by user id
+    - POST/api/restaurants		#creating restaurants
+    - GET/api/restaurants		#retrive restaurants
+    - PUT/api/restaurants/{restaurantsr_id}	#update restaurant by restaurant ids
+    - DELETE/api/restaurants/{restaurants_id}	#delete restaurant by restaurant ids
+    - POST/api/menus			#create menus
+    - GET/api/menus			#get menu
+    - PUT/api/menus/{menus_id}	#update menu details by menu id
+    - DELETE/api/menus/{menus_id}	#delete menu by menu id
+    - POST/api/reviews		#create reviews
+    - GET/api/reviews			#retrieve reviews
+    - PUT/api/reviews/{reviews_id}	#update reviews by id
+    - DELETE/api/reviews/{reviews_id}	#delecte reviews by id
+    - POST/api/photo			#create photos
+    - GET/api/photo			#retrive photos
+    - PUT/api/photo/{photo_id}	#update photo by photo id
+    - DELETE/api/reviews/{photo_id}	#delete photo by photo id
+
+**Inter Connection Service:** connect with menu management service to maintain menus
+
 
 #### Restaurant Search Service
 
