@@ -129,3 +129,58 @@ ResponseEntity<Map> response = restTemplate.exchange(
     null, 
     Map.class
 );
+```
+
+## User Interface
+
+The user interface for the restaurant management system is implemented using React. This component-based framework allows for efficient and modular development, making it easy to manage and update various parts of the application. The implementation involves:
+
+- Setting up a React project.
+- Installing necessary dependencies like axios and react-router-dom.
+- Creating reusable components.
+- Managing state with React hooks.
+- Integrating with backend services using axios.
+
+## API Testing Tools
+
+Postman is used to test, document, and monitor the restaurant management system APIs. Postman allows for:
+
+- Building and sending HTTP requests.
+- Managing multiple environments with variables.
+- Grouping requests inside collections for better management.
+- Writing test scripts that automate testing workflows.
+- Simulating API responses with mock servers for testing purposes.
+
+Steps include:
+
+1. Setting up Postman.
+2. Creating a new collection for the project.
+3. Including requests for each of the API endpoints.
+4. Setting up environments for different stages (development, staging, and production).
+5. Writing test scripts to validate the responses.
+6. Using Collection Runner to automate tests.
+7. Reviewing results.
+
+## Deployment
+
+### Local Deployment
+
+1. Clone the Repository:
+   ```bash
+   git clone https://github.com/SenuraLakshan/Plant-Growth-Monitoring-System.git
+   ./mvnw spring-boot:run
+   ```
+2. Start the Eureka discovery server and API gateway.
+
+# Development Challenges
+
+During the development period, several challenges were faced, including:
+
+- **Data Consistency:** Synchronization of the data transferring between the services to prevent data corruption, especially relationships between users, restaurants, menus, reviews, and photos.
+- **Scalability:** Orienting the service to handle a large amount of user-generated content and high levels of traffic.
+- **Security:** Ensuring the security of different user inputs and protecting against unwanted intruders.
+- **Data Storage and Management:** Efficient storage and organization of large numbers of media files like photos, and enabling quick search capabilities.
+- **Integration:** Ensuring a smooth interface with other microservices like the authentication service and menu management service.
+
+
+
